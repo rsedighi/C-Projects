@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+// Function Declarations
+char scoreToGrade (int score, int score2, int score3);
+
+int main (void)
+{
+    // Local Declarations
+    int score;
+    int score2;
+    int score3;
+    char grade;
+    
+    // Statements
+    printf("Enter three test scores (0-100): ");
+    scanf("%d %d %d", &score, &score2, &score3);
+    
+    grade = scoreToGrade (score, score2, score3);
+    printf("The grade is: %c\n", grade);
+    
+    return grade;
+}
+
+char scoreToGrade (int score, int score2, int score3)
+{
+    // Local Declarations
+    char grade;
+    int homework_completed;
+    int homework_assigned;
+    
+    //Statements
+    
+        if (score >=90)
+            grade = 'A';
+        else if (score >=80)
+            grade = 'B';
+        else if (score >= 70)
+            grade = 'C';    
+        else if
+            (score >=60)
+        {
+            printf("Homework assignments completed: ");
+            scanf("%d", &homework_completed);
+            printf("Homework assignments assigned: ");
+            scanf("%d", &homework_assigned);
+           if (homework_completed / homework_assigned >= 80)
+               grade = 'D';
+            }
+        else
+        {
+            printf("Homework assignments completed: ");
+            scanf("%d", &homework_completed);
+            printf("Homework assignments assigned: ");
+            scanf("%d", &homework_assigned);
+            if (homework_completed / homework_assigned >= 80)
+            grade = 'F';   
+        }
+    
+    
+    return grade;
+}
+   
