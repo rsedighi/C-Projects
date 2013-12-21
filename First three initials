@@ -1,0 +1,23 @@
+//
+//  main.c
+//  chapter 2 project 39
+//
+//  Created by Ramin Sedighi (ME) on 10/18/12.
+//
+
+#include <stdio.h>
+
+int main (void)
+{
+
+    // Statements
+    printf("RRR      AAA       M     M    \n");
+    printf("R  R    A   A      MMM MMM    \n");
+    printf("R  R    A   A      MM   MM    \n");
+    printf("RRRR    AAAAA      M  M  M    \n");
+    printf("R R     A   A      M     M    \n");
+    printf("R  R    A   A      M     M    \n");
+    printf("R   R   A   A      M     M    \n");
+    return 0;
+}
+
