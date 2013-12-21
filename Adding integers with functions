@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+void value (int*a , int*b);
+int add (int a, int b);
+void printResult (int a, int b, int sum);
+
+int main (void)
+
+{
+    int a;
+    int b;
+    int sum;
+    
+    value (&a, &b);
+    sum = add (a, b);
+    printResult (a, b, sum);
+    return 0; 
+}
+void value (int* a, int* b)
+{   
+    printf("Input two integers seperated by a space: ");
+    scanf("%d %d", a, b);
+    return;
+}
+int add (int a, int b)
+{   
+    int sum;
+    
+    sum = a + b;
+    return sum;
+}
+void printResult (int a, int b, int sum)
+{   
+    printf("The sum of %d and %d is %d", a, b, sum);
+    return;
+    
+}
