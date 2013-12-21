@@ -1,0 +1,54 @@
+/*
+ Ramin Sedighi
+ CIS 15AG Fall 2012
+ Assignment F
+ Problem F2
+ 
+ This program asks the user to  enter Fahrenheit,
+ then returns Celsius, Rankine and Kelvins.
+ */
+
+#include <stdio.h>
+
+
+double GetFahrenheit(void);
+void ConvertTemps(double, double*, double*, double*);
+void PrintTemps(double, double, double, double);
+
+int main(void)
+{
+    double Fahrenheit;
+    double Celsius;
+    double Rankine;
+    double Kelvins;
+    
+    
+    Fahrenheit = GetFahrenheit();
+    ConvertTemps(Fahrenheit, &Celsius, &Rankine, &Kelvins);
+    PrintTemps(Fahrenheit, Celsius, Rankine, Kelvins);
+    return 0;
+}
+
+double GetFahrenheit(void)
+{
+    double Temp;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%lf", &Temp);
+    return Temp;
+}
+
+void ConvertTemps(double F, double *C, double *R, double *K)
+{
+    *C = ( F - 32 ) * 100 / 180;
+    *R = ( F - 32 ) + 491.67;
+    *K = *C + 273.16;
+}
+
+void PrintTemps(double F, double C, double R, double K)
+{
+    printf("Fahrenheit: %.2lf \n", F);
+    printf("Celsius: %2.2lf \n", C);
+    printf("Rankine: %.2lf \n", R);
+    printf("Kelvins: %.2lf \n", K);
+    return;
+}
