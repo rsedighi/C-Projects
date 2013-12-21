@@ -1,0 +1,83 @@
+/* 
+ Ramin Sedighi
+ CIS 15AG Fall 2012
+ Assignment E
+ Chapter 3 Project 39
+ 
+ This program reads the quantities of each item then 
+ calculates the cost of each item, the subtotal, 
+ and the total cost after an 8.25% sales tax.
+ */
+
+#include <stdio.h>
+
+int main(void)
+{
+    // Local Declerations
+    
+    int tvQuantity;
+    int vcrQuantity;
+    int remoteControllerQuantity;
+    int cdPlayerQuantity;
+    int tapeRecorderQuantity;
+    
+    const float TAX_RATE = 8.50;
+    const float TELEVISION = 400.00;
+    const float VCR = 220.00;
+    const float REMOTE_CONTROLLER = 35.00;
+    const float CD_PLAYER = 300.00;
+    const float TAPE_RECODER = 150.00;
+    
+    float totalPriceTv;
+    float totalPriceVcr;
+    float totalPriceRemoteController;
+    float totalPriceCdPlayer;
+    float totalPriceTapeRecorder;
+    float subTotal;
+    float taxAm;
+    float total;
+    
+    // Statements
+    
+    printf("Enter number of Televisions sold: ");
+    scanf("%d", &tvQuantity);
+    
+    printf("Enter number of VCRs sold: ");
+    scanf("%d", &vcrQuantity);
+    
+    printf("Enter number of Remote Controllers sold:  ");
+    scanf("%d", &remoteControllerQuantity);
+    
+    printf("Enter Number of CD Players sold:  ");
+    scanf("%d", &cdPlayerQuantity);
+    
+    printf("Enter number of Tape Recorders sold:  ");
+    scanf("%d", &tapeRecorderQuantity);
+
+    totalPriceTv = tvQuantity * TELEVISION;
+    totalPriceVcr = vcrQuantity * VCR;
+    totalPriceRemoteController = remoteControllerQuantity * REMOTE_CONTROLLER;
+    totalPriceCdPlayer = cdPlayerQuantity * CD_PLAYER;
+    totalPriceTapeRecorder = tapeRecorderQuantity * TAPE_RECODER;
+    
+    subTotal = (float) totalPriceTv+totalPriceVcr+totalPriceRemoteController+totalPriceCdPlayer+totalPriceTapeRecorder;
+    taxAm = (float) subTotal* TAX_RATE/100.00;
+    total = (float) subTotal+taxAm;
+    
+    printf("\nQTY   DESCRIPTION       UNIT PRICE     TOTAL PRICE\n");
+    printf("---   -----------       ----------     -----------\n");
+    
+    printf("%d    Television          400.00        %4.2f\n", tvQuantity, totalPriceTv); 
+    printf("%d    VCR                 220.00        %4.2f\n", vcrQuantity, totalPriceVcr);
+    printf("%d    Remote Controller    35.00        %4.2f\n", remoteControllerQuantity, totalPriceRemoteController);
+    printf("%d    CD Player           300.00        %4.2f\n", cdPlayerQuantity, totalPriceCdPlayer);
+    printf("%d    Tape Recorder       150.00        %4.2f\n", tapeRecorderQuantity, totalPriceTapeRecorder);
+    printf("                                       -----------");
+    printf("\n                        SUBTOTAL       %4.2f\n", subTotal);
+    printf("                        TAX            %4.2f\n", taxAm);
+    printf("                        TOTAL          %4.2f\n", total);
+
+    
+    
+    return 0;
+}
